@@ -1,0 +1,2 @@
+# portofoliosiswa1
+TUGAS INDIVIDU SMK PINTAR
