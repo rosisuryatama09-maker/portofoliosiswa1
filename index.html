@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMK PINTAR PORTOFOLIO SISWA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h2>SMK PINTAR</h2>
+    </div>
+    <nav class="menu">
+      <a href="#profil" class="nav-link active"><i class="fa-solid fa-user"></i> Profil</a>
+      <a href="#tentang" class="nav-link"><i class="fa-solid fa-address-card"></i> Tentang Saya</a>
+      <a href="#skill" class="nav-link"><i class="fa-solid fa-code"></i> Skill</a>
+      <a href="#project" class="nav-link"><i class="fa-solid fa-diagram-project"></i> Project</a>
+      <a href="#sertifikat" class="nav-link"><i class="fa-solid fa-certificate"></i> Sertifikat</a>
+      <a href="#kontak" class="nav-link"><i class="fa-solid fa-envelope"></i> Kontak</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+
+    <section id="profil" class="section active">
+      <div class="card profile-card">
+        <img src="https://via.placeholder.com/150" alt="Foto Siswa" id="foto-profil" class="avatar">
+        <h1 id="display-nama">Budi Pratama</h1>
+        <p class="subtitle" id="display-jurusan">Rekayasa Perangkat Lunak (RPL) - SMK Negeri 1</p>
+        <span class="status-badge" id="display-status"><i class="fa-solid fa-check-circle"></i> Status Data: Lengkap</span>
+      </div>
+    </section>
+
+    <section id="tentang" class="section">
+      <h2><i class="fa-solid fa-address-card"></i> Tentang Saya</h2>
+      <div class="card">
+        <form id="form-tentang" onsubmit="simpanTentang(event)">
+          <div class="form-group">
+            <label for="bio">Biografi / Deskripsi Diri *</label>
+            <textarea id="bio" rows="4" placeholder="Tuliskan deskripsi singkat mengenai diri Anda..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="nisn">NISN *</label>
+            <input type="number" id="nisn" placeholder="Masukkan NISN" required>
+          </div>
+          <button type="submit" class="btn-primary"><i class="fa-solid fa-save"></i> Simpan Data Saya</button>
+        </form>
+        <div id="output-tentang" class="data-preview hidden">
+          <h3>Informasi Terdisimpan:</h3>
+          <p><strong>NISN:</strong> <span id="val-nisn">-</span></p>
+          <p><strong>Bio:</strong> <span id="val-bio">-</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skill" class="section">
+      <h2><i class="fa-solid fa-code"></i> Keahlian / Skill</h2>
+      <div class="card">
+        <form id="form-skill" onsubmit="tambahSkill(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nama-skill">Nama Skill *</label>
+              <input type="text" id="nama-skill" placeholder="Contoh: HTML & CSS / Web Design" required>
+            </div>
+            <div class="form-group">
+              <label for="tingkat-skill">Tingkat Penguasaan (%) *</label>
+              <input type="number" id="tingkat-skill" min="1" max="100" placeholder="1 - 100" required>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary"><i class="fa-solid fa-plus"></i> Tambah Skill</button>
+        </form>
+        <hr>
+        <div id="list-skill" class="skill-container">
+          <p class="empty-msg">Belum ada data skill yang ditambahkan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="project" class="section">
+      <h2><i class="fa-solid fa-diagram-project"></i> Data Project</h2>
+      <div class="card">
+        <form id="form-project" onsubmit="tambahProject(event)">
+          <div class="form-group">
+            <label for="nama-project">Nama Project *</label>
+            <input type="text" id="nama-project" placeholder="Masukkan
